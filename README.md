@@ -77,3 +77,11 @@ ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
     html_tag.html_safe
 end
 ```
+
+## Edit Student
+1. Find id in students/show.html.erb `<%= link_to "Edit your profile", edit_student_path(@student) %>`
+
+
+### Add icon inside button
+Put the icon tag like `'<i class="material-icons right">edit</i>Edit your profile'.html_safe'`  
+`<%= link_to '<i class="material-icons right">edit</i>Edit your profile'.html_safe, edit_student_path(@student), class: "waves-effect waves-light btn" %>`
