@@ -36,7 +36,9 @@ $(document).on('turbolinks:load', function () {
     $(".dropdown-trigger").dropdown();
 }) 
 ```
+
 4. **Hamburger icon and responsive in mobile view**  
-- Add <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a> in _navigation.html.erb after brand-logo class tag and Add class="sidenav" div (refer documents)
+- Add `<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>` in _navigation.html.erb after brand-logo class tag and Add class="sidenav" div (refer documents)
 - Add **$('.sidenav').sidenav();** inside Same application.js after dropdown line
 - Refer code, there we changed two dropdown id for big screen and small screen
+
