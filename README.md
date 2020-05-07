@@ -85,3 +85,25 @@ end
 ### Add icon inside button
 Put the icon tag like `'<i class="material-icons right">edit</i>Edit your profile'.html_safe'`  
 `<%= link_to '<i class="material-icons right">edit</i>Edit your profile'.html_safe, edit_student_path(@student), class: "waves-effect waves-light btn" %>`
+
+# DRY - Don't Repeat Yourself
+
+### 1. Students Controller
+- Create a private method
+```
+def set_student
+        @student = Student.find(params[:id])
+end
+```
+- and put `before_action :set_student, only: [:show, :edit, :update]` about all methods.
+
+### 2. Students Views (_form partial)
+- Create _form.html.erb under students view folder
+- Cut everything from new.html.erb and edit.html.erb and paste in _form.html.erb
+- Write `<%= render 'form' %>` in new.html.erb and edit.html.erb
+- **Change in _form.html.erb**
+- `<h3 class="header"><%= @student.new_record? ? "Sign Up" : "Edit Profile" %></h3>`
+- `<%= f.submit(@student.new_record? ? "Sign Up" : "Submit Update", class: "btn orange waves-effect waves-light") %>`
+
+
+### 1. Students Controller
