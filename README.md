@@ -22,3 +22,7 @@ Created new.html.erb in courses view
 ## Install Material Icons
 1. Add **gem 'material_icons'** in Gemfile for _material Icon_
 2. Add **= require material_icons** in app\assets\stylesheets\application.css after _*= require_tree ._
+
+# Styling 
+1. Add Navigation by partials
+2. Add footer by partials
