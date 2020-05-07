@@ -42,3 +42,26 @@ $(document).on('turbolinks:load', function () {
 - Add **$('.sidenav').sidenav();** inside Same application.js after dropdown line
 - Refer code, there we changed two dropdown id for big screen and small screen
 
+# CRUD courses resource back-end
+```
+Notes:
+1. A resource for our application will be courses
+2. A second resource will be students
+3. Therefore, for now, a Course model, think of structure of a course
+4. A Student model, think of how you want to structure a student
+5. Convention - courses table, Course model (class), course.rb model file
+              - students table, Student model (class), student.rb model file
+6. CRUD actions from back-end
+7. CRUD actions (if necessary for model) from front-end
+```
+1. Create create_courses migration `rails g migration create_courses`
+2. Make migration file as follows and run migration
+```
+    create_table :courses do |t|
+      t.string :short_name
+      t.string :name
+      t.text :description
+      t.timestamps
+    end
+```
+3. 
