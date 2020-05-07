@@ -122,3 +122,21 @@ student.password = "password"
 student.save
 end
 ```
+
+# Authentication System Session
+<div style="background-color: yellow;">
+<h5>Login Logout functionality - Authentication system</h5>
+<ol>
+    <li>Build routes - these are custom routes we will build for login and logout.</li>
+    <li>Build login form, but won't be model backed form since there is no 'model' for logging in or out, we are simply simulating it</li>
+    <li>We will use :student_id of the student to identify them and start sessions</li>
+    <li>Some functions we will need to form
+        <ul>
+            <li>retreive current user based on if someone is logged in</li>
+            <li>check if a user is currently logged in</li>
+            <li>require a logged in user to perform actions</li>
+            <li>make some of our methods available to views and controllers</li>
+        </ul>
+    </li>
+</ol>
+    
