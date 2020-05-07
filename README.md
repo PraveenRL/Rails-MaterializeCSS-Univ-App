@@ -67,8 +67,13 @@ Notes:
 3. Listing all the courses in courses/index view
 
 # CRUD students resource back-end
-```
-Notes:
-1. Build Students
-```
 1. Add `resources :students, except: [:destroy]` in routes.rb
+2. Created students_controller.rb, student.rb, generated a migration
+
+# Form Errors
+1. Form error misalignment, add the following in config\environment.rb
+```
+ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
+    html_tag.html_safe
+end
+```
