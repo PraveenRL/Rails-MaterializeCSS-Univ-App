@@ -64,4 +64,11 @@ Notes:
       t.timestamps
     end
 ```
-3. 
+3. Listing all the courses in courses/index view
+
+# CRUD students resource back-end
+```
+Notes:
+1. Build Students
+```
+1. Add `resources :students, except: [:destroy]` in routes.rb
