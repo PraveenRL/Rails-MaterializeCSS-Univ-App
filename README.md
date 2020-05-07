@@ -105,5 +105,8 @@ end
 - `<h3 class="header"><%= @student.new_record? ? "Sign Up" : "Edit Profile" %></h3>`
 - `<%= f.submit(@student.new_record? ? "Sign Up" : "Submit Update", class: "btn orange waves-effect waves-light") %>`
 
-
-### 1. Students Controller
+### 3. Errors Partials
+- Create folder as shared and create `_error.html.erb` inside it.
+- Cut the errors code from _form.html.erb and paste in _error.html.erb
+- Modify the first line as `obj.errors.any?`
+- Pass object to error partial eg: `<%= render 'shared/error', obj: @student %>`
