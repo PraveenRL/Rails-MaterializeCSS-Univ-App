@@ -26,3 +26,17 @@ Created new.html.erb in courses view
 # Styling 
 1. Add Navigation by partials
 2. Add footer by partials
+
+## Add Dropdown feature and Hamburger menu
+1. Add `gem 'jquery-rails'`
+2. Add `//= require jquery` in app\assets\javascripts\application.js after _//= require rails-ujs_
+3. Add the following in application.js
+```
+$(document).on('turbolinks:load', function () {
+    $(".dropdown-trigger").dropdown();
+}) 
+```
+4. **Hamburger icon and responsive in mobile view**  
+- Add <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a> in _navigation.html.erb after brand-logo class tag and Add class="sidenav" div (refer documents)
+- Add **$('.sidenav').sidenav();** inside Same application.js after dropdown line
+- Refer code, there we changed two dropdown id for big screen and small screen

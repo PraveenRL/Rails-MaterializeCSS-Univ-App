@@ -19,6 +19,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons' 
 
+gem 'jquery-rails'
+
 group :development, :test do
   gem 'pg', '>= 0.18', '< 2.0'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
