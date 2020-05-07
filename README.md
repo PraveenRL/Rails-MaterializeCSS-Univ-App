@@ -110,3 +110,15 @@ end
 - Cut the errors code from _form.html.erb and paste in _error.html.erb
 - Modify the first line as `obj.errors.any?`
 - Pass object to error partial eg: `<%= render 'shared/error', obj: @student %>`
+
+# Add password
+- `rails g migration add_password_digest_to_students` 
+- Make as **add_column :students, :password_digest, :string** inside change
+- Run migration
+- Update all in rails console
+```
+Student.all.each do |student|
+student.password = "password"
+student.save
+end
+```
