@@ -115,7 +115,7 @@ end
 - `rails g migration add_password_digest_to_students` 
 - Make as **add_column :students, :password_digest, :string** inside change
 - Run migration
-- Update all in rails console
+- **Update all in rails console**
 ```
 Student.all.each do |student|
 student.password = "password"
@@ -124,7 +124,7 @@ end
 ```
 
 # Authentication System Session
-<div style="background-color: yellow;">
+<div>
 <h5>Login Logout functionality - Authentication system</h5>
 <ol>
     <li>Build routes - these are custom routes we will build for login and logout.</li>
@@ -139,4 +139,19 @@ end
         </ul>
     </li>
 </ol>
-    
+
+### flash.now[] -> Only on current page, not on next route
+
+## Helper used in views
+**ApplicationHelper =>**
+```
+def session_link
+    if (logged_in?)
+        link_to("Logout", logout_path, method: :delete)
+    else
+        link_to("Login", login_path)
+    end
+end
+```
+**_navigation.html.erb =>**
+`<li><%= session_link %></li>`
