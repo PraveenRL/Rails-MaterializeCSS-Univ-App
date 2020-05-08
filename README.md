@@ -160,3 +160,35 @@ end
 - `require_user` method in application_controller.rb
 - In sessions_controller.rb paste `skip_before_action :require_user, only: [:new, :create]` - This will skip the authenticate restrict actions
 - `before_action :require_same_student, only: [:edit, :update]` and define require_same_student in students_controller.rb
+
+<div>
+<h1>Many-To-Many association</h1>
+</h3>students and courses</h3>
+<ul>
+    <li>Course model and Student model, we will work with primary key for both and use them as foreign key</li>
+    <li>student_courses_controller.rb</li>
+    <li>student_course.rb model file</li>
+    <li>student_courses table</li>
+</ul>
+
+- Rails console > **rails g migration create_student_courses** -> create **student_courses** table after migration
+- Create student_course.rb
+- Add the following in student.rb
+```
+has_many :student_courses
+has_many :courses, through: :student_courses
+```
+- Add the following in courses.rb
+```
+has_many :student_courses
+has_many :students, through: :student_courses
+```
+- Add the following in student_course.rb
+```
+belongs_to :student
+belongs_to :course
+```
+</div>
+
+## Iterate 
+> course.students.each { |student| puts student.name }
