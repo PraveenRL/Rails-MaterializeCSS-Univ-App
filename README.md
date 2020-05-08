@@ -155,3 +155,8 @@ end
 ```
 **_navigation.html.erb =>**
 `<li><%= session_link %></li>`
+
+## Restrict actions
+- `require_user` method in application_controller.rb
+- In sessions_controller.rb paste `skip_before_action :require_user, only: [:new, :create]` - This will skip the authenticate restrict actions
+- `before_action :require_same_student, only: [:edit, :update]` and define require_same_student in students_controller.rb

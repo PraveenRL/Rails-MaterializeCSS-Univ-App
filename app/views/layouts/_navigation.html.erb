@@ -1,11 +1,13 @@
 <nav>
     <div class="container">
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo right">Tech University</a>
+            <%= link_to "Tech University", root_path, class: "brand-logo right" %>
             <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="#">Courses</a></li>
-                <li><a href="#">Enrollment</a></li>
+                <li><%= link_to "Courses", root_path %></li>
+                <% if logged_in? %>
+                    <li><%= link_to "Students", students_path %></li>
+                <% end %>
                 <li>
                     <a class="dropdown-trigger" data-target="account_dropdown-lg">Account
                         <i class="material-icons right">arrow_drop_down</i>
@@ -15,6 +17,18 @@
         </div>
     </div>
 </nav>
+
+<ul class="sidenav" id="mobile-demo">
+    <li><%= link_to "Courses", root_path %></li>
+    <% if logged_in? %>
+        <li><%= link_to "Students", students_path %></li>
+    <% end %>
+    <li>
+        <a class="dropdown-trigger" data-target="account_dropdown-sm">Account
+            <i class="material-icons right">arrow_drop_down</i>
+        </a>
+    </li>
+</ul>
 
 <ul id="account_dropdown-lg" class="dropdown-content">
   <li><%= session_link %></li>
@@ -30,13 +44,5 @@
   <li><a href="#!">three</a></li>
 </ul>
 
-<ul class="sidenav" id="mobile-demo">
-    <li><a href="#">Courses</a></li>
-    <li><a href="#">Enrollment</a></li>
-    <li>
-        <a class="dropdown-trigger" data-target="account_dropdown-sm">Account
-            <i class="material-icons right">arrow_drop_down</i>
-        </a>
-    </li>
-</ul>
+
      
