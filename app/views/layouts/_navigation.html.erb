@@ -32,16 +32,22 @@
 
 <ul id="account_dropdown-lg" class="dropdown-content">
   <li><%= session_link %></li>
-  <li><a href="#!">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
+  <% if logged_in? %>
+    <li> <%= link_to "Profile", student_path(current_user) %> </li>
+  <% else %>
+    <li class="divider"></li>
+    <li><%= link_to "Sign Up", new_student_path %></li>
+  <% end %>
 </ul>
 
 <ul id="account_dropdown-sm" class="dropdown-content">
   <li><%= session_link %></li>
-  <li><a href="#!">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
+  <% if logged_in? %>
+    <li> <%= link_to "Profile", student_path(current_user) %> </li>
+  <% else %>
+    <li class="divider"></li>
+    <li><%= link_to "Sign Up", new_student_path %></li>
+  <% end %>
 </ul>
 
 

@@ -192,3 +192,4 @@ belongs_to :course
 
 ## Iterate 
 > course.students.each { |student| puts student.name }
+
